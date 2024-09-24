@@ -4,7 +4,7 @@
 })(jQuery);
 
 
-$(document).on('load', function(){
+$(window).on('load', function(){
     document.getElementById("my_audio").play();
     console.log('Shaadi me zaroor aana');
 });
