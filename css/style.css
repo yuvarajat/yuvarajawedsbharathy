@@ -352,6 +352,13 @@
 
 body {
 	font-family: Arial, Helvetica, Sans-serif;
+	overflow-x: hidden;
+	transition: opacity 0.5s ease;
+	opacity: 0; /* Start hidden */
+}
+
+body.fade-in {
+	opacity: 1; /* Fully visible */
 }
 
 img {

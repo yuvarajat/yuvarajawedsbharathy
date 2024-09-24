@@ -4,9 +4,17 @@
 })(jQuery);
 
 
-$(window).on('load', function(){
-    document.getElementById("my_audio").play();
-    console.log('Shaadi me zaroor aana');
+// $(document).on('click', function(){
+//     document.getElementById("my_audio").play();
+// });
+
+$('body').addClass('fade-in');
+
+$(document).ready(function(){
+    var audio = document.getElementById("my_audio");
+    audio.play().catch(function(error) {
+        console.log("Audio play failed: ", error);
+    });
 });
 
 // Set the date we're counting down to
