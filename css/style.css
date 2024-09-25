@@ -445,8 +445,8 @@ img {
 	/* padding: 20px; */
 	text-align: center;
 	/* min-height:100%; */
+	
 }
-
 
 /** **/
 
@@ -460,9 +460,29 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	/* height: 100vh;
-    width: 100%; */
 	flex-direction: column;
+	background-image: url(../assets/img/DSC_7560.JPG);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative; /* Enable positioning for the pseudo-element */
+	margin: 0;
+}
+
+body::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(225, 220, 237, 0.75); /* White color with 0.5 opacity */
+	z-index: -1; /* Ensure the overlay is above the background */
+}
+
+.container {
+	position: relative; /* Ensure content appears above the overlay */
+	z-index: 2; /* Higher z-index for content */
 }
 
 .title {
