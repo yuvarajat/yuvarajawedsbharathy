@@ -31,6 +31,6 @@ const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
 
 // Retrieve specific parameters using .get()
-let finalname=atob(params.get('invite')||"R3Vlc3Q=");
+let finalname=atob(params.get('invite')||"RGVhciBHdWVzdA==");
         
 guestName.innerText = finalname;
