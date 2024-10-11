@@ -1,3 +1,19 @@
+// Function to check if the resource is available
+function checkAndRedirect() {
+  fetch("invitation.html")
+    .then((response) => {
+      if (response.ok) {
+        // If the resource is ready, redirect to invitation.html
+        window.location.href = "invitation.html";
+      } else {
+        console.error("Resource not available, redirect failed.");
+      }
+    })
+    .catch((error) => {
+      console.error("Error fetching the resource:", error);
+    });
+}
+
 window.onload = function () {
   $(document).ready(function () {
     var envelope = $("#envelope");
@@ -12,6 +28,9 @@ window.onload = function () {
 
     var decorationImgRight = new Image();
     decorationImgRight.src = "../assets/img/right.png";
+
+    var bgImageMobileView = new Image();
+    bgImageMobileView.src = "../assets/img/hand-holding-pic.webp";
 
     // Preload background image for invitation.html
     var bgImage = new Image();
@@ -42,7 +61,8 @@ window.onload = function () {
       setTimeout(function () {
         $("body").addClass("fade-out"); // Add fade-out class
         setTimeout(function () {
-          window.location.href = "invitation.html"; // Redirect after fade-out
+            checkAndRedirect();
+        //   window.location.href = "invitation.html"; // Redirect after fade-out
         }, 200); // Delay to match the fade-out duration
       }, 3000); // Initial delay before fade-out
     }
