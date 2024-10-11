@@ -6,21 +6,6 @@ window.onload = function () {
     var toOpen = $("#toOpen");
     var clickTimeout;
 
-     // Load the content of invitation.html
-     fetch("invitation.html")
-     .then(response => {
-         if (!response.ok) {
-             throw new Error("Network response was not ok");
-         }
-         return response.text();
-     })
-     .then(html => {
-         document.getElementById("invitationContent").innerHTML = html; // Load HTML into a specific element
-     })
-     .catch(error => {
-         console.error("Error loading the invitation:", error);
-     });
-
     //Preload decorations images
     var decorationImgLeft = new Image();
     decorationImgLeft.src = "../assets/img/left.png";
@@ -65,3 +50,15 @@ window.onload = function () {
 
   console.log("Entire page is fully loaded");
 };
+
+const guestName = document.getElementById("guestName");
+
+const queryString = window.location.search;
+
+// Create a new URLSearchParams object
+const params = new URLSearchParams(queryString);
+
+// Retrieve specific parameters using .get()
+let finalname = atob(params.get("invite") || "RGVhciBHdWVzdA==");
+
+guestName.innerText = finalname;
