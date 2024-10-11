@@ -467,6 +467,8 @@ body {
 	background-size: cover;
 	position: relative; /* Enable positioning for the pseudo-element */
 	margin: 0;
+	height: 100vh;
+	width: 100%;
 }
 
 body::before {
